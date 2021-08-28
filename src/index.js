@@ -2,24 +2,19 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './styles.css'
 
-function sum(a, b) {
-    return a + b
-}
+// const element = 'Digital Innovation One'
 
-function primeiroJSX() {
+// const rootElement = document.getElementById('root');
+// ReactDOM.render(element, rootElement)
+
+const element = 'Digital Innovation One'
+const element2 = <h1>Olá Turma =D</h1>
+
+function App() {
     return {
-        // <div className='teste'>
-        //     Alessandra Luisi
-        //     <h1>Soma: {sum(10, 20)}</h1>
-        // </div>
-    }
-}
-
-const App = () => {
-
-    return {
-        // <div className='App'>
-        //     {primeiroJSX()}
+        // <div>
+        //     {element}
+        //     {element2}
         // </div>
     }
 }
