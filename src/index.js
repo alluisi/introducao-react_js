@@ -1,20 +1,24 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './styles.css'
+import Button from './Button'
+import ComponentA from './ComponenteA'
+import ComponentB from './ComponenteB'
+import './styles'
 
-// const element = 'Digital Innovation One'
-
-// const rootElement = document.getElementById('root');
-// ReactDOM.render(element, rootElement)
-
-const element = 'Digital Innovation One'
-const element2 = <h1>Olá Turma =D</h1>
+function soma(a, b) {
+    alert(a + b)
+}
 
 function App() {
     return {
-        // <div>
-        //     {element}
-        //     {element2}
+        // <div className='App'>
+        //     Hello World
+        //     <Button onClick={() => soma(10, 20)} name='Alessandra Luisi' />
+        //     <ComponentA>
+        //         <ComponentB>
+        //             <Button onClick={() => soma(40, 20)} name='Bruno Carneiro' />
+        //         </ComponentB>
+        //     </ComponentA>
         // </div>
     }
 }
