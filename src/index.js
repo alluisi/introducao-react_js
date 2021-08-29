@@ -1,25 +1,40 @@
-import React from 'react'
+import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import Button from './Button'
-import ComponentA from './ComponenteA'
-import ComponentB from './ComponenteB'
 import './styles'
 
-function soma(a, b) {
-    alert(a + b)
-}
+class App extends Component {
+    constructor(props) {
+        super(props)
 
-function App() {
-    return {
-        // <div className='App'>
-        //     Hello World
-        //     <Button onClick={() => soma(10, 20)} name='Alessandra Luisi' />
-        //     <ComponentA>
-        //         <ComponentB>
-        //             <Button onClick={() => soma(40, 20)} name='Bruno Carneiro' />
-        //         </ComponentB>
-        //     </ComponentA>
-        // </div>
+        this.state = {
+            clock: 1000,
+            copo: 'água'
+        }
+    }
+
+    componentDidMount() {
+        window.setTimeout(() => {
+            this.setState({
+                copo: 'suco'
+            })
+        }, 3000)
+    }
+
+    alterarCopo = () => {
+        this.setState({
+            copo: 'refrigerante'
+        })
+    }
+
+
+    render() {
+        const { clock } = this.state
+        return (
+            <div>
+                <h1>{clock}</h1>
+                <button onClick={() => this.alterarCopo()}><h1>{copo}</h1></button>
+            </div>
+        )
     }
 }
 
