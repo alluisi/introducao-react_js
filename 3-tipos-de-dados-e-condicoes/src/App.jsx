@@ -1,27 +1,40 @@
 import React from "react";
+import mock from './mock';
+import Button from './components/Button';
 
 const App = () => {
 
-    const name = 'Digital Innovation One';
-
-    const showEvent = (event) => {
-        console.log('evento clicado');
-        console.log(event);
-        alert(name);
+    const handleClick = (id) => {
+        console.log('deletar cliente');
+        alert(`ID do cliente: ${id}`);
     }
-    const Button = <button onClick={showEvent}>Mostrar Evento</button>
 
-    const handleChange = (event) => {
-        const { value } = event.target;
-        console.log(value);
+    const renderCustomers = (customer, index) => {
+        return (
+            <div key={`customer-${customer.id}`}>
+                <li>{customer.name} <Button onClick={() => handleClick(customer.id)}>Deletar Cliente</Button></li>
+                {customer.skills.map(renderSkills)}
+            </div>
+        )
+    }
+
+    const renderSkills = (skill, index) => {
+        return (
+            <div style={{ paddingLeft: '30px' }} key={`skill-${index}`}>
+                <li>{skill}</li>
+            </div>
+        )
     }
 
     return (
         <div>
             <p>Didital Innovation One</p>
             <p>Bem vindo a nossa aula =D</p>
-            <input onChange={handleChange} />
-            {Button}
+            <div>
+                <ul>
+                    {mock.map(renderCustomers)}
+                </ul>
+            </div>
         </div>
     )
 };
