@@ -1,0 +1,50 @@
+{
+    "plugins": [
+        "react"
+    ],
+    "parser": "babel-eslint",
+    "parseOptinons": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeactures": {
+            "jsx": true
+        }
+    },
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true,
+        "mocha": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "rule": {
+        "semi": [
+            2,
+            "always"
+        ],
+        "indent": [
+            "error",
+            2
+        ],
+        "object-curty-spacing": [
+            "error",
+            "always"
+        ],
+        "no-extra-parens": "error",
+        "max-len": [
+            "error",
+            {
+                "code": 100
+            }
+        ],
+        "no-multi-spaces": "error"
+    },
+    "settings": {
+        "react": {
+            "verson": "16.8"
+        }
+    }
+}
