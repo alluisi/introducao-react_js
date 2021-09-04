@@ -1,32 +1,43 @@
 import React from "react";
 
-const buttonA = <button>Histórico dos Clientes</button>;
-const buttonB = <button>Cadastrar Cliente</button>;
-const hasCustomer = true;
+const listCustomer = [
+    {
+        id: 1,
+        nome: 'Alessandra Luisi',
+        skills: ['JS', 'HTML', 'CSS', 'React', 'Node']
+    },
+    {
+        id: 2,
+        nome: 'Bruno Carneiro',
+        skills: ['React', 'Node', 'CSS', 'Webpack']
+    },
+    {
+        id: 3,
+        nome: 'Aline Gomes',
+        skills: ['Kotlin']
+    },
+    {
+        id: 4,
+        nome: 'Greg Tolentino',
+        skills: ['Comer', 'Dormir', 'Roncar']
+    }
+]
 
 const App = () => {
-    const renderShowHistory = () => (
-        <div>
-            Clique no botão abaixo para visualizar o histórico dos clientes
-            <br />
-            {buttonA}
-        </div>
-    )
 
-    const renderAddCustomer = () => (
-        <div>
-            Clique no botão abaixo para cadastrar o cliente
-            <br />
-            {buttonB}
-        </div>
-    )
-
-    const showCustomer = () => {
-        if (!hasCustomer) return null
-
+    const renderSkills = (skill, index) => {
         return (
-            <div>
-                <h1>Nome do Cliente: Alessandra Luisi</h1>
+            <div style={{ paddingLeft: '30px' }} key={`skill-${index}`}>
+                <li>{skill}</li>
+            </div>
+        )
+    }
+
+    const renderCustomers = (customer, index) => {
+        return (
+            <div key={/*index*/`customer-${customer.id}`}>
+                <li>{customer.nome}</li>
+                {customer.skills.map(renderSkills)}
             </div>
         )
     }
@@ -35,16 +46,10 @@ const App = () => {
         <div>
             <p>Didital Innovation One</p>
             <p>Bem vindo a nossa aula =D</p>
-            {/* {hasCustomer && (
-                <div>
-                    Clique no botão abaixo para visualizar o histórico dos clientes
-                    <br />
-                    {buttonA}
-                </div>
-            )} */}
-            {hasCustomer ? renderShowHistory() : renderAddCustomer()}
             <div>
-                {showCustomer()}
+                <ul>
+                    {listCustomer.map(renderCustomers)}
+                </ul>
             </div>
         </div>
     )
